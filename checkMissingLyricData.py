@@ -22,6 +22,9 @@ def file_contains_info(filename):
 
 os.chdir("Lyrics")
 
+count = 0
+print("The following files are missing (C) information:")
+
 # process every file in every directory
 for dir_name, subdir_list, file_list in os.walk('.'):
 
@@ -32,4 +35,7 @@ for dir_name, subdir_list, file_list in os.walk('.'):
             full_filename = dir_name + "/" + filename
             # print("checking {}\t-\t{}".format(dir_name, filename))
             if not file_contains_info(full_filename):
-                print("{}\t-\t{}".format(dir_name, filename))
+                print("{:10}-\t{}".format(dir_name[2:], filename))
+                count += 1
+
+print(count, "files missing (C) information")

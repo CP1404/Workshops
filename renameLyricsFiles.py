@@ -27,7 +27,7 @@ def get_fixed_filename(filename):
             else:
                 new_name += character
     # replace all spaces with underscores
-    new_name = new_name.replace(' ', '_')
+    # new_name = new_name.replace(' ', '_')
     new_name += ".txt"
     return new_name
 
